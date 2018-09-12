@@ -62,35 +62,21 @@ public class Incaa {
 		return catalogo.add(new Pelicula(proxId,pelicula));
 	}
 	
-	public boolean eliminarPelicula(int idPelicula) throws Exception{
-		boolean eliminado = false;
-		int i = 0;
+	public boolean eliminarPelicula(int idPelicula) throws Exception{;
+		Pelicula p = null;
 		if(traerPelicula(idPelicula) == null) throw new Exception("no existe la pelicula");
-		while(eliminado == false && i < catalogo.size()) {
-			if(catalogo.get(i).getIdPelicula() == idPelicula) {
-				catalogo.remove(i);
-				eliminado = true;
-			}
-			i++;
-		}
-		return eliminado;
+		p = traerPelicula(idPelicula);
+		return catalogo.remove(p);
 	}
 	
 	public boolean modificarPelicula(int idPelicula,String pelicula) throws Exception {
-		boolean modificado = false;
+		boolean modificado = true;
 		int i =  0;
 		Pelicula p = null;
 		if(traerPelicula(idPelicula) == null) throw new Exception("no existe la pelicula a modificar");
-		else {
-		
-			while(i < catalogo.size() && modificado == false) {
-				if(catalogo.get(i).getIdPelicula() == idPelicula) {
-					catalogo.get(i).setPelicula(pelicula);
-					modificado = true;
-				}
-				i++;
-			}
-		}
+		p = traerPelicula(idPelicula);
+		p.setPelicula(pelicula);
+		catalogo.set(idPelicula-1, p);
 		return modificado;
 	}
 

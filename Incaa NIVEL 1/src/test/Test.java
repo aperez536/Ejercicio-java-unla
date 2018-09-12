@@ -67,6 +67,7 @@ public class Test {
 			System.out.println(i.agregarPelicula("Harry y el dragon"));
 			System.out.println(i.traerpelicula("Harry"));
 			System.out.println(i.eliminarPelicula(2));
+			System.out.println(i.toString());
 			}
 		catch(Exception e){
 			System.out.println(e.getMessage());
@@ -81,7 +82,7 @@ public class Test {
 			System.out.println(i.agregarPelicula("La monja"));
 			System.out.println(i.toString());
 			System.out.println(i.traerPelicula(2));
-			System.out.println(i.modificarPelicula(2, "probando"));
+			System.out.println(i.modificarPelicula(3, "probando"));
 			System.out.println(i.toString());
 			System.out.println(i.agregarPelicula("Hercules"));
 			System.out.println(i.eliminarPelicula(3));
