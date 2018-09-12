@@ -93,6 +93,8 @@ public class Test {
 			System.out.println(i.eliminarPelicula(3));
 			System.out.println(i.toString());
 			System.out.println(i.traerpelicula(g1));
+			System.out.println(i.modificarPelicula(4, "MODIFICADO",g1));
+			System.out.println(i.toString());
 
 			
 		}

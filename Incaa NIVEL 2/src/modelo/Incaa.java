@@ -13,7 +13,17 @@ public class Incaa {
 	}
 
 	
-	
+	public int traerPosPelicula(int idPelicula) {
+		int pos = 0;
+		Pelicula p = null;
+		int i = 0;
+		while(p== null && i < catalogo.size()) {
+			if(catalogo.get(i).getIdPelicula() == idPelicula)
+				pos = i;
+			i++;
+		}
+		return pos;
+	}
 	
 	public Pelicula traerPelicula(int idPelicula) {
 		Pelicula p = null;
@@ -88,7 +98,7 @@ public class Incaa {
 		p = traerPelicula(idPelicula);
 		p.setPelicula(pelicula);
 		p.setGenero(genero);
-		catalogo.set(idPelicula-1, p);
+		catalogo.set(traerPosPelicula(idPelicula), p);
 		return modificado;
 	}
 
