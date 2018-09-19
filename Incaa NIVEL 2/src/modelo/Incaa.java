@@ -13,7 +13,7 @@ public class Incaa {
 	}
 
 	
-	public int traerPosPelicula(int idPelicula) {
+	private int traerPosPelicula(int idPelicula) {
 		int pos = 0;
 		boolean encontrado = false;
 		int i = 0;
