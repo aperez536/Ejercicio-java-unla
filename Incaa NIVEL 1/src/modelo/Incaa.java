@@ -12,7 +12,19 @@ public class Incaa {
 		return catalogo;
 	}
 
-	
+	private int traerPosPelicula(int idPelicula) {
+		int pos = 0;
+		boolean encontrado = false;
+		int i = 0;
+		while(encontrado == false && i < catalogo.size()) {
+			if(catalogo.get(i).getIdPelicula() == idPelicula){
+				pos = i;
+				encontrado = true;	
+			}
+			i++;
+		}
+		return pos;
+	}
 	
 	
 	public Pelicula traerPelicula(int idPelicula) {
@@ -76,7 +88,7 @@ public class Incaa {
 		if(traerPelicula(idPelicula) == null) throw new Exception("no existe la pelicula a modificar");
 		p = traerPelicula(idPelicula);
 		p.setPelicula(pelicula);
-		catalogo.set(idPelicula-1, p);
+		catalogo.set(traerPosPelicula(idPelicula), p);
 		return modificado;
 	}
 
