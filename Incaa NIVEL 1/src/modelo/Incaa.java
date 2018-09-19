@@ -74,7 +74,7 @@ public class Incaa {
 		return catalogo.add(new Pelicula(proxId,pelicula));
 	}
 	
-	public boolean eliminarPelicula(int idPelicula) throws Exception{;
+	public boolean eliminarPelicula(int idPelicula) throws Exception{
 		Pelicula p = null;
 		if(traerPelicula(idPelicula) == null) throw new Exception("no existe la pelicula");
 		p = traerPelicula(idPelicula);
