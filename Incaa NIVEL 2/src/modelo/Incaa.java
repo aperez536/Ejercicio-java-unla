@@ -15,11 +15,13 @@ public class Incaa {
 	
 	public int traerPosPelicula(int idPelicula) {
 		int pos = 0;
-		Pelicula p = null;
+		boolean encontrado = false;
 		int i = 0;
-		while(p== null && i < catalogo.size()) {
-			if(catalogo.get(i).getIdPelicula() == idPelicula)
+		while(encontrado == && i < catalogo.size()) {
+			if(catalogo.get(i).getIdPelicula() == idPelicula){
 				pos = i;
+				encontrado = true;	
+			}
 			i++;
 		}
 		return pos;
@@ -91,7 +93,6 @@ public class Incaa {
 	}
 	
 	public boolean modificarPelicula(int idPelicula,String pelicula,Genero genero) throws Exception {
-		boolean modificado = true;
 		int i =  0;
 		Pelicula p = null;
 		if(traerPelicula(idPelicula) == null) throw new Exception("no existe la pelicula a modificar");
@@ -99,7 +100,7 @@ public class Incaa {
 		p.setPelicula(pelicula);
 		p.setGenero(genero);
 		catalogo.set(traerPosPelicula(idPelicula), p);
-		return modificado;
+		return true;
 	}
 
 	@Override
