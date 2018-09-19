@@ -17,7 +17,7 @@ public class Incaa {
 		int pos = 0;
 		boolean encontrado = false;
 		int i = 0;
-		while(encontrado == && i < catalogo.size()) {
+		while(encontrado == false && i < catalogo.size()) {
 			if(catalogo.get(i).getIdPelicula() == idPelicula){
 				pos = i;
 				encontrado = true;	
