@@ -79,7 +79,6 @@ public class Supermercado {
 		p = traerProducto(idProducto);
 		p.setProducto(producto);
 		p.setPrecio((float) precio);
-		gondola.set(traerPosProducto(idProducto), p);
 		return true;
 	}
 	public boolean eliminarProducto(int idProducto) throws Exception {
