@@ -75,20 +75,17 @@ public class Incaa {
 	}
 	
 	public boolean eliminarPelicula(int idPelicula) throws Exception{
-		Pelicula p = null;
-		if(traerPelicula(idPelicula) == null) throw new Exception("no existe la pelicula");
-		p = traerPelicula(idPelicula);
+		Pelicula p = traerPelicula(idPelicula);
+		if(p == null) throw new Exception("no existe la pelicula");
 		return catalogo.remove(p);
 	}
 	
 	public boolean modificarPelicula(int idPelicula,String pelicula) throws Exception {
 		boolean modificado = true;
 		int i =  0;
-		Pelicula p = null;
-		if(traerPelicula(idPelicula) == null) throw new Exception("no existe la pelicula a modificar");
-		p = traerPelicula(idPelicula);
+		Pelicula p = traerPelicula(idPelicula);
+		if(p == null) throw new Exception("no existe la pelicula a modificar");
 		p.setPelicula(pelicula);
-		catalogo.set(traerPosPelicula(idPelicula), p);
 		return modificado;
 	}
 
