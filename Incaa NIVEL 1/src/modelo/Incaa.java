@@ -42,7 +42,7 @@ public class Incaa {
 		List<Pelicula> nuevaLista = new ArrayList<Pelicula>();
 		int i = 0;
 		while(i < catalogo.size()) {
-			if(catalogo.get(i).getPelicula().contains(partePelicula))
+			if(catalogo.get(i).getPelicula().ToLowerCase().contains(partePelicula.ToLowerCase()))
 				nuevaLista.add(catalogo.get(i));
 			i++;
 		}
