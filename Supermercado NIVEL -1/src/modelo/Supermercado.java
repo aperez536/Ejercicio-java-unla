@@ -27,8 +27,7 @@ public class Supermercado {
 			i++;
 		}
 		return p;
-}
-
+	}
 
 	public Producto traerProducto(int idProducto) {
 		Producto p = null;
@@ -50,19 +49,7 @@ public class Supermercado {
 		}
 		return p;
 	}
-	private int traerPosProducto(int idProducto) {
-		boolean encontrado = false;
-		int i = 0;
-		int pos= 0;
-		while(i < gondola.size() && encontrado == false ) {
-			if(gondola.get(i).getIdProducto() == idProducto) {
-				pos = i;
-				encontrado = true;
-			}
-			i++;
-		}
-		return pos;
-	}
+
 	public boolean agregarProducto(String producto,float precio) throws Exception {
 		if(traerProducto(producto) != null) throw new Exception ("el producto ya existe en la lista");
 		int proxId = 0;
@@ -74,17 +61,15 @@ public class Supermercado {
 		return gondola.add(new Producto(proxId,producto,precio));
 	}
 	public boolean modificarProducto(int  idProducto,String producto,double precio) throws Exception {
-		Producto p = null;
-		if(traerProducto(idProducto) == null) throw new Exception("no existe el producto a modificar");
-		p = traerProducto(idProducto);
+		Producto p = traerProducto(idProducto);
+		if(p == null) throw new Exception("no existe el producto a modificar");
 		p.setProducto(producto);
 		p.setPrecio((float) precio);
 		return true;
 	}
 	public boolean eliminarProducto(int idProducto) throws Exception {
-		Producto p = null;
-		if(traerProducto(idProducto) == null) throw new Exception ("el producto a eliminar no existe");
-		p = traerProducto(idProducto);
+		Producto p = traerProducto(idProducto);
+		if(p== null) throw new Exception ("el producto a eliminar no existe");
 		return gondola.remove(p);
 	}
 	
