@@ -11,21 +11,6 @@ public class Incaa {
 	public List<Pelicula> getCatalogo() {
 		return catalogo;
 	}
-
-	private int traerPosPelicula(int idPelicula) {
-		int pos = 0;
-		boolean encontrado = false;
-		int i = 0;
-		while(encontrado == false && i < catalogo.size()) {
-			if(catalogo.get(i).getIdPelicula() == idPelicula){
-				pos = i;
-				encontrado = true;	
-			}
-			i++;
-		}
-		return pos;
-	}
-	
 	
 	public Pelicula traerPelicula(int idPelicula) {
 		Pelicula p = null;
